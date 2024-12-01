@@ -18,9 +18,10 @@ a.sort()
 b.sort()
 print(f'Lists len: {len(a)}, {len(b)}')
 
-dist = 0
-for i in range(0, len(a)-1):
-  dist += abs(a[i]-b[i])
-  #print(f'{a[i]}  {b[i]}  {dist}')
+total_dist = 0
+for i in range(0, len(a)):
+  dist = abs(a[i]-b[i])
+  total_dist += dist
+  print(f'{a[i]}  {b[i]}  {dist}')
 
-print(f'Dist: {dist}')
+print(f'Total dist: {total_dist}')
