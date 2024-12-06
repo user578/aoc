@@ -3,7 +3,7 @@
 from pathlib import Path
 from pprint import pprint
 
-# file_path = Path("example_input.txt")
+# file_path = Path("ex_input.txt")
 file_path = Path("input.txt")
 
 a, b = [], []
