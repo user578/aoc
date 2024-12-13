@@ -21,14 +21,12 @@ def calc(a, total_steps, cur_step):
   print('====')
   print(f'START cur_step={cur_step}')
   #print(f'a before step: {a}')
-  if cur_step == total_steps+1:
-    print(f'Exit OVERFLOW step {cur_step}')
-    return len(a)
+
   l = 0
   i = 0
   # iterate over list
-  while True:
-    print(f'+ Loop step: {cur_step} at i: {i}')
+  for i in range(0, len(a)):
+    print(f'+ Start loop step: {cur_step} at i: {i}')
     print(f'a: {a}')
     expanded = []
     cur_dig_len = len(str(a[i]))
@@ -43,24 +41,29 @@ def calc(a, total_steps, cur_step):
     else:
       expanded.append(a[i]*2024)
 
+    if cur_step == total_steps+1:
+      print(f'Exit OVERFLOW step {cur_step}')
+      print(f'a: {expanded}')
+      return len(expanded)
+
     l += calc(expanded, total_steps, cur_step+1)
     print(f'-- returned to step: {cur_step}, i: {i}')
     print(f'a[i]: {a[i]}, a: {a}')
     print(f'l: {l}')
 
-    if i+1 == len(a):
-      print(f'Exit STEP {cur_step} at i: {i} of {len(a)}')
-      print(f'a: {a}')
-      print(f'l: {l}')
-      break
-    else:
-      i += 1
+    # if i+1 == len(a):
+    #   print(f'Exit STEP {cur_step} at i: {i} of {len(a)}')
+    #   print(f'a: {a}')
+    #   print(f'l: {l}')
+    #   break
+    # else:
 
-  return len(a)
-
+  return l
 
 
-a = [0, 0]
-sum = calc(a, 3, 1)
+
+a = [1, 1]
+# "1" "2024" "20 24"
+sum = calc(a, 4, 1)
 
 print(f'tot len stones: {sum}')
