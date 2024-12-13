@@ -2,8 +2,8 @@
 
 from pprint import pprint
 
-filename = "ei_p1_1.txt"
-filename = "ei_p1_2.txt"
+filename = "ei1.txt"
+filename = "ei2.txt"
 filename = "input.txt"
 
 a, b = [], []
