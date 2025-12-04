@@ -4,7 +4,7 @@ from pprint import pprint
 
 
 filename = "ex_in.txt"
-filename = "input.txt"
+#filename = "input.txt"
 
 arr = []
 
